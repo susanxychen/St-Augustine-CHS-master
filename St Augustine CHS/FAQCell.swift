@@ -9,8 +9,5 @@
 import UIKit
 
 class FAQCell: UITableViewCell {
-
-    
-    }
-
+    @IBOutlet weak var question: UILabel!
 }
