@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C1Q-We-Oq9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C1Q-We-Oq9">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,6 +53,10 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqz-11-1S1">
                                                 <rect key="frame" x="0.0" y="0.0" width="226.5" height="198"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="226.5" id="Ta8-iK-YkE"/>
+                                                    <constraint firstAttribute="height" constant="198" id="XXz-B2-nYs"/>
+                                                </constraints>
                                                 <connections>
                                                     <segue destination="NTI-m3-zZT" kind="show" id="Xbc-6J-XAk"/>
                                                 </connections>
@@ -63,12 +67,12 @@
                                             <constraint firstItem="v8j-0f-I2F" firstAttribute="top" secondItem="WNL-JB-fpd" secondAttribute="bottom" constant="8" symbolic="YES" id="0RH-Pb-IT6"/>
                                             <constraint firstItem="v8j-0f-I2F" firstAttribute="trailing" secondItem="vrZ-mV-u1U" secondAttribute="trailing" id="832-nH-9zm"/>
                                             <constraint firstItem="Pqz-11-1S1" firstAttribute="top" secondItem="l1t-R2-2No" secondAttribute="top" id="B5F-gz-uXz"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pqz-11-1S1" secondAttribute="bottom" id="DRL-vh-ZqQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pqz-11-1S1" secondAttribute="trailing" id="FKA-uq-beZ"/>
                                             <constraint firstItem="Pqz-11-1S1" firstAttribute="leading" secondItem="l1t-R2-2No" secondAttribute="leading" id="FtS-ih-soB"/>
                                             <constraint firstItem="v8j-0f-I2F" firstAttribute="leading" secondItem="l1t-R2-2No" secondAttribute="leadingMargin" id="Nlh-vs-DME"/>
-                                            <constraint firstAttribute="bottom" secondItem="Pqz-11-1S1" secondAttribute="bottom" id="Qz0-Sk-dZ2"/>
                                             <constraint firstItem="vrZ-mV-u1U" firstAttribute="top" secondItem="v8j-0f-I2F" secondAttribute="bottom" constant="8" symbolic="YES" id="RZC-ZN-5bq"/>
                                             <constraint firstAttribute="height" constant="198" id="RwB-WH-6ye"/>
-                                            <constraint firstAttribute="trailing" secondItem="Pqz-11-1S1" secondAttribute="trailing" id="VfD-hU-Vsf"/>
                                             <constraint firstItem="WNL-JB-fpd" firstAttribute="leading" secondItem="v8j-0f-I2F" secondAttribute="leading" id="XUF-wk-Bbr"/>
                                             <constraint firstItem="v8j-0f-I2F" firstAttribute="top" secondItem="l1t-R2-2No" secondAttribute="top" constant="91" id="cgn-fC-LOd"/>
                                             <constraint firstItem="WNL-JB-fpd" firstAttribute="top" secondItem="l1t-R2-2No" secondAttribute="topMargin" id="iTX-Wa-LNd"/>
@@ -76,192 +80,225 @@
                                             <constraint firstItem="v8j-0f-I2F" firstAttribute="leading" secondItem="vrZ-mV-u1U" secondAttribute="leading" id="t1M-it-RVz"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AA-gT-si0">
-                                        <rect key="frame" x="56" y="260" width="178" height="40"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io6-Yf-S5L" userLabel="Menu Scroll View">
+                                        <rect key="frame" x="0.0" y="196" width="227" height="960"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVn-Ji-FU2" userLabel="Buttons View">
+                                                <rect key="frame" x="0.0" y="0.0" width="227" height="1021"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjR-Ip-86O">
+                                                        <rect key="frame" x="57" y="14" width="170" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="170" id="PmG-vh-gLi"/>
+                                                            <constraint firstAttribute="height" constant="40" id="Vdp-bD-mNS"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
+                                                        <state key="normal" title="Clubs">
+                                                            <color key="titleColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="sB5-uo-h8e" kind="show" id="Cug-l7-SHo"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTW-BS-PLe">
+                                                        <rect key="frame" x="57" y="315" width="170" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="waB-QS-5Z1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
+                                                        <state key="normal" title="FAQ">
+                                                            <color key="titleColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="OjW-FB-0FA" kind="show" id="nhy-55-jja"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clubs" translatesAutoresizingMaskIntoConstraints="NO" id="8k3-HD-byl">
+                                                        <rect key="frame" x="14" y="19" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="laJ-sz-gjA"/>
+                                                            <constraint firstAttribute="width" constant="30" id="zk9-1o-65h"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAn-aQ-T8o">
+                                                        <rect key="frame" x="57" y="171" width="178" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="178" id="NW7-j8-QvZ"/>
+                                                            <constraint firstAttribute="height" constant="40" id="zkA-Qy-DLx"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
+                                                        <state key="normal" title="Spirit Meters">
+                                                            <color key="titleColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="F3v-Zq-2AX" kind="show" id="H4I-Im-tw2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-hW-WiM">
+                                                        <rect key="frame" x="57" y="219" width="170" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="cTH-UE-oJX"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
+                                                        <state key="normal" title="Titan Tag">
+                                                            <color key="titleColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="z5e-e4-CUe" kind="show" id="KoW-yt-d4g"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faq" translatesAutoresizingMaskIntoConstraints="NO" id="gpF-dK-eU6">
+                                                        <rect key="frame" x="14" y="323" width="30" height="24"/>
+                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="yOf-kS-Wqk"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AA-gT-si0">
+                                                        <rect key="frame" x="57" y="67" width="178" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="I8I-hP-gCg"/>
+                                                            <constraint firstAttribute="width" constant="178" id="gb0-w3-oBn"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
+                                                        <state key="normal" title="Cafe Menu">
+                                                            <color key="titleColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="94Y-iz-zHC" kind="show" id="PoA-Gg-bgq"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafe" translatesAutoresizingMaskIntoConstraints="NO" id="KxN-jz-D1T">
+                                                        <rect key="frame" x="14" y="72" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="1QV-N2-Npn"/>
+                                                            <constraint firstAttribute="width" constant="30" id="4iN-pA-PrI"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="titanTag" translatesAutoresizingMaskIntoConstraints="NO" id="veQ-6W-5kP">
+                                                        <rect key="frame" x="14" y="224" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="F0q-hP-IZK"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spiritPoints" translatesAutoresizingMaskIntoConstraints="NO" id="ZMV-k5-aAe">
+                                                        <rect key="frame" x="14" y="176" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="adK-UV-P9I"/>
+                                                            <constraint firstAttribute="width" constant="30" id="wOi-hu-ZVJ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gear" translatesAutoresizingMaskIntoConstraints="NO" id="1Jl-dc-Hrw">
+                                                        <rect key="frame" x="14" y="272" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="4Np-xF-dYG"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-Mj-2lV">
+                                                        <rect key="frame" x="57" y="122" width="170" height="39"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="39" id="Rr9-g0-TbD"/>
+                                                            <constraint firstAttribute="width" constant="170" id="png-0V-tdG"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
+                                                        <state key="normal" title="Song Requests">
+                                                            <color key="titleColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="Yxm-Yd-G9m" kind="show" id="sik-Fl-vnd"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkj-Wx-aMJ">
+                                                        <rect key="frame" x="57" y="267" width="170" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="hKd-TA-fsN"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
+                                                        <state key="normal" title="Settings">
+                                                            <color key="titleColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="c74-yS-abQ" kind="show" id="Wqr-5J-ZRS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="song" translatesAutoresizingMaskIntoConstraints="NO" id="Qd4-Ox-kpx">
+                                                        <rect key="frame" x="14" y="126" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="T70-id-Sbn"/>
+                                                            <constraint firstAttribute="height" constant="30" id="x19-vU-UJY"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="pTW-BS-PLe" firstAttribute="top" secondItem="Hkj-Wx-aMJ" secondAttribute="bottom" constant="8" id="0RZ-tG-fmq"/>
+                                                    <constraint firstItem="3G5-hW-WiM" firstAttribute="leading" secondItem="cAn-aQ-T8o" secondAttribute="leading" id="5K3-uj-VXi"/>
+                                                    <constraint firstItem="8AA-gT-si0" firstAttribute="leading" secondItem="KxN-jz-D1T" secondAttribute="trailing" constant="13" id="5nc-X9-9Yb"/>
+                                                    <constraint firstItem="gpF-dK-eU6" firstAttribute="top" secondItem="1Jl-dc-Hrw" secondAttribute="bottom" constant="21" id="9i5-Q8-mHK"/>
+                                                    <constraint firstItem="8AA-gT-si0" firstAttribute="top" secondItem="PjR-Ip-86O" secondAttribute="bottom" constant="13" id="AkO-7Z-A52"/>
+                                                    <constraint firstItem="gpF-dK-eU6" firstAttribute="leading" secondItem="veQ-6W-5kP" secondAttribute="leading" id="B1a-x7-EAP"/>
+                                                    <constraint firstItem="3G5-hW-WiM" firstAttribute="trailing" secondItem="cfm-Mj-2lV" secondAttribute="trailing" id="BDM-K6-KoG"/>
+                                                    <constraint firstItem="KxN-jz-D1T" firstAttribute="leading" secondItem="BVn-Ji-FU2" secondAttribute="leading" constant="14" id="Cl1-uB-C2S"/>
+                                                    <constraint firstItem="PjR-Ip-86O" firstAttribute="leading" secondItem="8k3-HD-byl" secondAttribute="trailing" constant="13" id="Dmx-C5-K5y"/>
+                                                    <constraint firstItem="ZMV-k5-aAe" firstAttribute="leading" secondItem="BVn-Ji-FU2" secondAttribute="leading" constant="14" id="G9d-5K-3c6"/>
+                                                    <constraint firstItem="1Jl-dc-Hrw" firstAttribute="top" secondItem="veQ-6W-5kP" secondAttribute="bottom" constant="18" id="Ius-X1-TGQ"/>
+                                                    <constraint firstItem="gpF-dK-eU6" firstAttribute="trailing" secondItem="ZMV-k5-aAe" secondAttribute="trailing" id="JjW-jE-VMx"/>
+                                                    <constraint firstItem="KxN-jz-D1T" firstAttribute="top" secondItem="8k3-HD-byl" secondAttribute="bottom" constant="23" id="Qg2-JG-QRV"/>
+                                                    <constraint firstItem="gpF-dK-eU6" firstAttribute="leading" secondItem="1Jl-dc-Hrw" secondAttribute="leading" id="Qkw-uu-xeh"/>
+                                                    <constraint firstItem="pTW-BS-PLe" firstAttribute="trailing" secondItem="Hkj-Wx-aMJ" secondAttribute="trailing" id="Ss7-0O-Nod"/>
+                                                    <constraint firstItem="gpF-dK-eU6" firstAttribute="leading" secondItem="ZMV-k5-aAe" secondAttribute="leading" id="Tda-mh-fE3"/>
+                                                    <constraint firstItem="8k3-HD-byl" firstAttribute="leading" secondItem="BVn-Ji-FU2" secondAttribute="leading" constant="14" id="U00-Wl-MhZ"/>
+                                                    <constraint firstItem="3G5-hW-WiM" firstAttribute="top" secondItem="cAn-aQ-T8o" secondAttribute="bottom" constant="8" id="USZ-Va-A3I"/>
+                                                    <constraint firstItem="Qd4-Ox-kpx" firstAttribute="top" secondItem="KxN-jz-D1T" secondAttribute="bottom" constant="24" id="V9g-oj-vRg"/>
+                                                    <constraint firstItem="veQ-6W-5kP" firstAttribute="top" secondItem="ZMV-k5-aAe" secondAttribute="bottom" constant="18" id="X3N-kk-oLl"/>
+                                                    <constraint firstItem="ZMV-k5-aAe" firstAttribute="top" secondItem="Qd4-Ox-kpx" secondAttribute="bottom" constant="20" id="Ywm-tT-V6k"/>
+                                                    <constraint firstItem="pTW-BS-PLe" firstAttribute="leading" secondItem="gpF-dK-eU6" secondAttribute="trailing" constant="13" id="a53-fM-EFM"/>
+                                                    <constraint firstItem="cAn-aQ-T8o" firstAttribute="top" secondItem="cfm-Mj-2lV" secondAttribute="bottom" constant="10" id="fYt-Pk-3nd"/>
+                                                    <constraint firstItem="3G5-hW-WiM" firstAttribute="leading" secondItem="Hkj-Wx-aMJ" secondAttribute="leading" id="gme-Nh-tmy"/>
+                                                    <constraint firstItem="cAn-aQ-T8o" firstAttribute="leading" secondItem="ZMV-k5-aAe" secondAttribute="trailing" constant="13" id="h1E-tv-6mk"/>
+                                                    <constraint firstItem="PjR-Ip-86O" firstAttribute="centerY" secondItem="8k3-HD-byl" secondAttribute="centerY" id="iha-Jo-Zhm"/>
+                                                    <constraint firstItem="Hkj-Wx-aMJ" firstAttribute="top" secondItem="3G5-hW-WiM" secondAttribute="bottom" constant="8" id="iwY-ES-fE3"/>
+                                                    <constraint firstItem="PjR-Ip-86O" firstAttribute="top" secondItem="BVn-Ji-FU2" secondAttribute="top" constant="14" id="mW2-bU-qhx"/>
+                                                    <constraint firstAttribute="width" constant="227" id="oAi-E3-ris"/>
+                                                    <constraint firstItem="gpF-dK-eU6" firstAttribute="trailing" secondItem="1Jl-dc-Hrw" secondAttribute="trailing" id="owt-oR-37u"/>
+                                                    <constraint firstItem="3G5-hW-WiM" firstAttribute="trailing" secondItem="Hkj-Wx-aMJ" secondAttribute="trailing" id="pQI-98-hPh"/>
+                                                    <constraint firstItem="pTW-BS-PLe" firstAttribute="leading" secondItem="Hkj-Wx-aMJ" secondAttribute="leading" id="rbU-aG-pWk"/>
+                                                    <constraint firstItem="cfm-Mj-2lV" firstAttribute="top" secondItem="8AA-gT-si0" secondAttribute="bottom" constant="15" id="tLM-uw-dDK"/>
+                                                    <constraint firstItem="gpF-dK-eU6" firstAttribute="trailing" secondItem="veQ-6W-5kP" secondAttribute="trailing" id="wdw-02-0KS"/>
+                                                    <constraint firstItem="Qd4-Ox-kpx" firstAttribute="leading" secondItem="BVn-Ji-FU2" secondAttribute="leading" constant="14" id="yd8-54-ZqG"/>
+                                                    <constraint firstItem="cfm-Mj-2lV" firstAttribute="leading" secondItem="Qd4-Ox-kpx" secondAttribute="trailing" constant="13" id="zJX-Wb-O0j"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="I8I-hP-gCg"/>
-                                            <constraint firstAttribute="width" constant="178" id="gb0-w3-oBn"/>
+                                            <constraint firstAttribute="trailing" secondItem="BVn-Ji-FU2" secondAttribute="trailing" id="1ud-Ws-BSn"/>
+                                            <constraint firstAttribute="bottom" secondItem="BVn-Ji-FU2" secondAttribute="bottom" constant="-61" id="71w-Eq-fsV"/>
+                                            <constraint firstItem="BVn-Ji-FU2" firstAttribute="leading" secondItem="Io6-Yf-S5L" secondAttribute="leading" id="7Fh-cY-5fH"/>
+                                            <constraint firstAttribute="bottom" secondItem="BVn-Ji-FU2" secondAttribute="bottom" constant="-61" id="9In-D7-gSz"/>
+                                            <constraint firstItem="BVn-Ji-FU2" firstAttribute="centerY" secondItem="Io6-Yf-S5L" secondAttribute="centerY" constant="30.5" id="9cx-8v-NyR"/>
+                                            <constraint firstItem="BVn-Ji-FU2" firstAttribute="top" secondItem="Io6-Yf-S5L" secondAttribute="top" id="WUA-OE-s1n"/>
+                                            <constraint firstItem="BVn-Ji-FU2" firstAttribute="leading" secondItem="Io6-Yf-S5L" secondAttribute="leading" id="XRf-h4-maC"/>
+                                            <constraint firstItem="BVn-Ji-FU2" firstAttribute="centerX" secondItem="Io6-Yf-S5L" secondAttribute="centerX" id="lCh-5T-f0y"/>
+                                            <constraint firstItem="BVn-Ji-FU2" firstAttribute="top" secondItem="Io6-Yf-S5L" secondAttribute="top" id="v62-na-IkW"/>
+                                            <constraint firstAttribute="trailing" secondItem="BVn-Ji-FU2" secondAttribute="trailing" id="v9a-wK-oIK"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
-                                        <state key="normal" title="Cafe Menu">
-                                            <color key="titleColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="94Y-iz-zHC" kind="show" id="PoA-Gg-bgq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-Mj-2lV">
-                                        <rect key="frame" x="56" y="315" width="170" height="39"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="39" id="Rr9-g0-TbD"/>
-                                            <constraint firstAttribute="width" constant="170" id="png-0V-tdG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
-                                        <state key="normal" title="Song Requests">
-                                            <color key="titleColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Yxm-Yd-G9m" kind="show" id="sik-Fl-vnd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjR-Ip-86O">
-                                        <rect key="frame" x="56" y="207" width="170" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="170" id="PmG-vh-gLi"/>
-                                            <constraint firstAttribute="height" constant="40" id="Vdp-bD-mNS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
-                                        <state key="normal" title="Clubs">
-                                            <color key="titleColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="sB5-uo-h8e" kind="show" id="Cug-l7-SHo"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clubs" translatesAutoresizingMaskIntoConstraints="NO" id="8k3-HD-byl">
-                                        <rect key="frame" x="13" y="212" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="laJ-sz-gjA"/>
-                                            <constraint firstAttribute="width" constant="30" id="zk9-1o-65h"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spiritPoints" translatesAutoresizingMaskIntoConstraints="NO" id="ZMV-k5-aAe">
-                                        <rect key="frame" x="13" y="369" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="adK-UV-P9I"/>
-                                            <constraint firstAttribute="width" constant="30" id="wOi-hu-ZVJ"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="song" translatesAutoresizingMaskIntoConstraints="NO" id="Qd4-Ox-kpx">
-                                        <rect key="frame" x="13" y="319" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="T70-id-Sbn"/>
-                                            <constraint firstAttribute="height" constant="30" id="x19-vU-UJY"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafe" translatesAutoresizingMaskIntoConstraints="NO" id="KxN-jz-D1T">
-                                        <rect key="frame" x="13" y="265" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="1QV-N2-Npn"/>
-                                            <constraint firstAttribute="width" constant="30" id="4iN-pA-PrI"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAn-aQ-T8o">
-                                        <rect key="frame" x="56" y="364" width="178" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="178" id="NW7-j8-QvZ"/>
-                                            <constraint firstAttribute="height" constant="40" id="zkA-Qy-DLx"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
-                                        <state key="normal" title="Spirit Meters">
-                                            <color key="titleColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="F3v-Zq-2AX" kind="show" id="H4I-Im-tw2"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-hW-WiM">
-                                        <rect key="frame" x="56" y="412" width="170" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="cTH-UE-oJX"/>
-                                            <constraint firstAttribute="width" constant="170" id="hM2-nM-dcp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
-                                        <state key="normal" title="Titan Tag">
-                                            <color key="titleColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="z5e-e4-CUe" kind="show" id="KoW-yt-d4g"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="titanTag" translatesAutoresizingMaskIntoConstraints="NO" id="veQ-6W-5kP">
-                                        <rect key="frame" x="13" y="417" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="F0q-hP-IZK"/>
-                                            <constraint firstAttribute="width" constant="30" id="XoX-FT-yXy"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkj-Wx-aMJ">
-                                        <rect key="frame" x="56" y="460" width="170" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="170" id="6Gs-AM-bi2"/>
-                                            <constraint firstAttribute="height" constant="40" id="hKd-TA-fsN"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
-                                        <state key="normal" title="Settings">
-                                            <color key="titleColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="c74-yS-abQ" kind="show" id="Wqr-5J-ZRS"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gear" translatesAutoresizingMaskIntoConstraints="NO" id="1Jl-dc-Hrw">
-                                        <rect key="frame" x="13" y="465" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="4Np-xF-dYG"/>
-                                            <constraint firstAttribute="width" constant="30" id="W1W-VG-TKj"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTW-BS-PLe">
-                                        <rect key="frame" x="56" y="508" width="170" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="170" id="0ec-mb-ukU"/>
-                                            <constraint firstAttribute="height" constant="40" id="waB-QS-5Z1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="20"/>
-                                        <state key="normal" title="FAQ">
-                                            <color key="titleColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="OjW-FB-0FA" kind="show" id="nhy-55-jja"/>
-                                        </connections>
-                                    </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faq" translatesAutoresizingMaskIntoConstraints="NO" id="gpF-dK-eU6">
-                                        <rect key="frame" x="13" y="516" width="30" height="24"/>
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="vf7-Xl-JD4"/>
-                                            <constraint firstAttribute="height" constant="24" id="yOf-kS-Wqk"/>
-                                        </constraints>
-                                    </imageView>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="Xeu-n8-fY7"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="Ykf-Lc-syF"/>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="8AA-gT-si0" firstAttribute="top" secondItem="PjR-Ip-86O" secondAttribute="bottom" constant="13" id="0cH-Ki-YYT"/>
-                                    <constraint firstItem="ZMV-k5-aAe" firstAttribute="top" secondItem="Qd4-Ox-kpx" secondAttribute="bottom" constant="20" id="3GT-Qf-qKx"/>
-                                    <constraint firstAttribute="trailing" secondItem="3G5-hW-WiM" secondAttribute="trailing" constant="0.5" id="4B1-m4-qTY"/>
+                                    <constraint firstItem="Io6-Yf-S5L" firstAttribute="leading" secondItem="ZmE-2m-EIZ" secondAttribute="leading" id="1Bw-hi-I9d"/>
                                     <constraint firstItem="l1t-R2-2No" firstAttribute="leading" secondItem="ZmE-2m-EIZ" secondAttribute="leading" id="53C-6q-MII"/>
-                                    <constraint firstItem="cAn-aQ-T8o" firstAttribute="top" secondItem="cfm-Mj-2lV" secondAttribute="bottom" constant="10" id="5qa-X3-vhE"/>
-                                    <constraint firstItem="gpF-dK-eU6" firstAttribute="leading" secondItem="ZmE-2m-EIZ" secondAttribute="leading" constant="13" id="5wa-Fx-TwH"/>
-                                    <constraint firstAttribute="trailing" secondItem="pTW-BS-PLe" secondAttribute="trailing" constant="0.5" id="7Nk-CE-65e"/>
-                                    <constraint firstItem="Hkj-Wx-aMJ" firstAttribute="top" secondItem="3G5-hW-WiM" secondAttribute="bottom" constant="8" id="9RF-EW-I2T"/>
-                                    <constraint firstItem="ZMV-k5-aAe" firstAttribute="leading" secondItem="ZmE-2m-EIZ" secondAttribute="leading" constant="13" id="AZw-f1-wda"/>
-                                    <constraint firstItem="PjR-Ip-86O" firstAttribute="top" secondItem="l1t-R2-2No" secondAttribute="bottom" constant="9" id="D9Z-lc-k3R"/>
-                                    <constraint firstItem="cfm-Mj-2lV" firstAttribute="top" secondItem="8AA-gT-si0" secondAttribute="bottom" constant="15" id="FAU-Ci-OgA"/>
-                                    <constraint firstItem="pTW-BS-PLe" firstAttribute="leading" secondItem="gpF-dK-eU6" secondAttribute="trailing" constant="13" id="HMC-zL-Fyx"/>
-                                    <constraint firstItem="3G5-hW-WiM" firstAttribute="leading" secondItem="veQ-6W-5kP" secondAttribute="trailing" constant="13" id="Kke-cx-74u"/>
-                                    <constraint firstItem="veQ-6W-5kP" firstAttribute="top" secondItem="ZMV-k5-aAe" secondAttribute="bottom" constant="18" id="KpR-K6-i9Z"/>
-                                    <constraint firstItem="8k3-HD-byl" firstAttribute="top" secondItem="l1t-R2-2No" secondAttribute="bottom" constant="14" id="LKP-Fg-z3n"/>
+                                    <constraint firstItem="Io6-Yf-S5L" firstAttribute="top" secondItem="ZmE-2m-EIZ" secondAttribute="top" constant="196" id="D2p-sk-h7a"/>
+                                    <constraint firstAttribute="bottom" secondItem="l1t-R2-2No" secondAttribute="bottom" constant="958" id="LeX-c4-HWQ"/>
                                     <constraint firstItem="l1t-R2-2No" firstAttribute="top" secondItem="ZmE-2m-EIZ" secondAttribute="top" id="OYi-h0-blA"/>
-                                    <constraint firstItem="veQ-6W-5kP" firstAttribute="leading" secondItem="ZmE-2m-EIZ" secondAttribute="leading" constant="13" id="QDJ-3Q-T8L"/>
-                                    <constraint firstItem="pTW-BS-PLe" firstAttribute="top" secondItem="Hkj-Wx-aMJ" secondAttribute="bottom" constant="8" id="SrO-op-MFL"/>
-                                    <constraint firstItem="gpF-dK-eU6" firstAttribute="top" secondItem="1Jl-dc-Hrw" secondAttribute="bottom" constant="21" id="TBE-jn-WP7"/>
-                                    <constraint firstItem="KxN-jz-D1T" firstAttribute="leading" secondItem="ZmE-2m-EIZ" secondAttribute="leading" constant="13" id="ZIm-Sn-A0G"/>
-                                    <constraint firstItem="8AA-gT-si0" firstAttribute="leading" secondItem="KxN-jz-D1T" secondAttribute="trailing" constant="13" id="cJd-bx-cwS"/>
-                                    <constraint firstItem="1Jl-dc-Hrw" firstAttribute="leading" secondItem="ZmE-2m-EIZ" secondAttribute="leading" constant="13" id="eQC-of-VnW"/>
-                                    <constraint firstItem="cAn-aQ-T8o" firstAttribute="leading" secondItem="ZMV-k5-aAe" secondAttribute="trailing" constant="13" id="hWW-Cc-neq"/>
-                                    <constraint firstItem="Hkj-Wx-aMJ" firstAttribute="leading" secondItem="1Jl-dc-Hrw" secondAttribute="trailing" constant="13" id="igz-Jr-KAx"/>
-                                    <constraint firstItem="PjR-Ip-86O" firstAttribute="leading" secondItem="8k3-HD-byl" secondAttribute="trailing" constant="13" id="iim-3B-x7b"/>
+                                    <constraint firstItem="l1t-R2-2No" firstAttribute="leading" secondItem="ZmE-2m-EIZ" secondAttribute="leading" id="QVZ-Il-F7N"/>
+                                    <constraint firstAttribute="trailing" secondItem="l1t-R2-2No" secondAttribute="trailing" id="Zfe-ij-l7M"/>
+                                    <constraint firstAttribute="bottom" secondItem="Io6-Yf-S5L" secondAttribute="bottom" id="eWh-V5-JGQ"/>
                                     <constraint firstItem="l1t-R2-2No" firstAttribute="top" secondItem="ZmE-2m-EIZ" secondAttribute="top" id="jf0-kS-Fhd"/>
                                     <constraint firstAttribute="trailing" secondItem="l1t-R2-2No" secondAttribute="trailing" id="joe-t7-uRk"/>
-                                    <constraint firstItem="Qd4-Ox-kpx" firstAttribute="top" secondItem="KxN-jz-D1T" secondAttribute="bottom" constant="24" id="ltm-Q0-PJf"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hkj-Wx-aMJ" secondAttribute="trailing" constant="0.5" id="mhn-dP-rbw"/>
-                                    <constraint firstItem="1Jl-dc-Hrw" firstAttribute="top" secondItem="veQ-6W-5kP" secondAttribute="bottom" constant="18" id="mro-il-bxd"/>
-                                    <constraint firstItem="KxN-jz-D1T" firstAttribute="top" secondItem="8k3-HD-byl" secondAttribute="bottom" constant="23" id="nNO-Ew-yNk"/>
-                                    <constraint firstItem="3G5-hW-WiM" firstAttribute="top" secondItem="cAn-aQ-T8o" secondAttribute="bottom" constant="8" id="nZm-zk-nU0"/>
-                                    <constraint firstItem="cfm-Mj-2lV" firstAttribute="leading" secondItem="Qd4-Ox-kpx" secondAttribute="trailing" constant="13" id="sHM-H2-mgR"/>
-                                    <constraint firstItem="8k3-HD-byl" firstAttribute="leading" secondItem="ZmE-2m-EIZ" secondAttribute="leading" constant="13" id="wUg-0M-tWJ"/>
-                                    <constraint firstItem="Qd4-Ox-kpx" firstAttribute="leading" secondItem="ZmE-2m-EIZ" secondAttribute="leading" constant="13" id="wdQ-ky-ESr"/>
+                                    <constraint firstItem="l1t-R2-2No" firstAttribute="top" secondItem="ZmE-2m-EIZ" secondAttribute="top" id="pvp-cb-AUt"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qz9-pe-15d">
@@ -273,8 +310,8 @@
                                     <action selector="tapOutOfMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Suw-Vn-rYj"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G0F-1K-Cg1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1156"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G0F-1K-Cg1">
+                                <rect key="frame" x="400" y="0.0" width="375" height="1156"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIc-FW-6Oz">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
@@ -598,6 +635,7 @@
                     <connections>
                         <outlet property="anncViewHeight" destination="Fvi-8E-9yA" id="6lK-tX-rkt"/>
                         <outlet property="annoucView" destination="Q2H-uS-rjb" id="0aW-WA-8KU"/>
+                        <outlet property="buttonsView" destination="BVn-Ji-FU2" id="l7A-Ca-6Yr"/>
                         <outlet property="calendarButton" destination="9bF-9O-Uz2" id="dVi-Zp-uGf"/>
                         <outlet property="clubAnncHeight" destination="UcO-a8-1M7" id="ojd-VN-cZU"/>
                         <outlet property="clubAnncView" destination="jsh-2k-3AL" id="uyH-JX-9xS"/>
@@ -614,6 +652,7 @@
                         <outlet property="homeScrollViewHeight" destination="pH1-jS-mwu" id="ycD-Zu-bi4"/>
                         <outlet property="homeView" destination="8bC-Xf-vdC" id="Xsa-JV-Fhm"/>
                         <outlet property="leadingConstraint" destination="loi-Nt-OzY" id="VFe-Ge-F06"/>
+                        <outlet property="menuScrollView" destination="Io6-Yf-S5L" id="Dma-mu-m2i"/>
                         <outlet property="menuView" destination="ZmE-2m-EIZ" id="pLc-RM-KXx"/>
                         <outlet property="newUserButton" destination="f20-Wx-GAe" id="qrR-Re-RL7"/>
                         <outlet property="profilePicture" destination="WNL-JB-fpd" id="juc-cO-lED"/>
@@ -820,6 +859,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Na-BV-hoj"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Hcd-au-7L5"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="cafeViewHeight" destination="Is2-nz-q6c" id="uSM-F3-Egf"/>
@@ -1441,6 +1481,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3gx-it-jEz"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dnF-p1-OZc"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="badgeCollectionViewHeight" destination="RCV-Rj-rnz" id="yMa-dh-HhV"/>
@@ -1872,6 +1913,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fb5-aw-hca"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zwf-ML-5zN"/>
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="dayCourseLabel" destination="og1-Uv-mLw" id="VKQ-yH-xNk"/>
@@ -2007,6 +2049,7 @@
                         <viewLayoutGuide key="safeArea" id="0Mt-51-KJI"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="k4J-YR-ZtH"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addAClubButton" destination="8dg-s8-5nA" id="kk1-0b-gmR"/>
@@ -2117,6 +2160,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gxI-g1-t0M"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bWb-9y-9hz"/>
                     <connections>
                         <outlet property="pendingLabel" destination="ScL-xV-hka" id="Kd1-sU-cLR"/>
                         <outlet property="pendingListCollectionView" destination="WZp-Fy-fTi" id="hdK-JV-ajh"/>
@@ -2336,6 +2380,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kW0-uq-q43"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2mA-cp-lue"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="adminLabel" destination="3VD-BN-Qeo" id="tFu-l6-iZZ"/>
@@ -2773,6 +2818,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a9M-Io-xzb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="sE2-eD-cFw"/>
                     <connections>
                         <outlet property="goBackButton" destination="RYb-DO-qDC" id="tvS-K8-jKG"/>
                         <outlet property="loginValidLabel" destination="fL7-wk-2ga" id="l85-vG-VEj"/>
@@ -2801,7 +2847,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG5-ke-Aqt">
-                                        <rect key="frame" x="8" y="12" width="359" height="20"/>
+                                        <rect key="frame" x="8" y="10.5" width="359" height="21.5"/>
                                         <fontDescription key="fontDescription" name="Scada-Regular" family="Scada" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -3140,6 +3186,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nsj-2s-4Lz"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ez8-Xu-ZMF"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="nextButton" destination="Wq8-aj-dnZ" id="YQi-6J-NLd"/>
@@ -3302,6 +3349,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xar-cB-8b2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bfW-pQ-Esi"/>
                     <connections>
                         <outlet property="nextButtonHidden" destination="RhE-6G-XsV" id="U1p-sa-ih1"/>
                         <outlet property="privacyPolicyButton" destination="1XP-1e-yCV" id="j2k-Hx-8Vy"/>
@@ -3418,6 +3466,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jvB-6y-Tq2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HNl-9o-cRi"/>
                     <connections>
                         <outlet property="continueButton" destination="rjs-05-0zX" id="cGU-IO-wUO"/>
                         <outlet property="failedButton" destination="XRy-Bd-M4U" id="6sT-4E-s92"/>
@@ -3433,6 +3482,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C1Q-We-Oq9" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Pwg-6U-Jbl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="FhG-2Y-CUr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -3663,6 +3713,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iKn-Qx-xRw"/>
                     </view>
+                    <navigationItem key="navigationItem" id="k6c-Tr-faK"/>
                     <connections>
                         <outlet property="LogOutButton" destination="Zw3-qE-1lN" id="Qau-WM-4Th"/>
                         <outlet property="cacheSizeLabel" destination="vyS-cg-YIC" id="laF-Xt-ObK"/>
@@ -3708,6 +3759,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1c7-Ix-uFb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="h7P-x6-9aQ"/>
                     <connections>
                         <outlet property="dataTextArea" destination="fLi-gv-Cxt" id="7cH-iF-0Z5"/>
                     </connections>
@@ -4025,6 +4077,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nkA-Xt-AkT"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kqW-Wc-Xv8"/>
                     <connections>
                         <outlet property="cancelButton" destination="xKk-tf-ocT" id="wp2-3N-MzP"/>
                         <outlet property="noSongLabel" destination="lCf-JI-l5y" id="so5-6F-mju"/>
@@ -4139,6 +4192,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NiJ-hF-BPh"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pAb-ZE-oy1"/>
                     <connections>
                         <outlet property="elevenBar" destination="DpM-CH-uwe" id="wwG-3l-jGb"/>
                         <outlet property="elevenLabel" destination="Hsj-8L-RX0" id="ZSA-DW-VwM"/>
@@ -4215,6 +4269,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5JL-88-cyF"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fqm-JB-TEE"/>
                     <connections>
                         <outlet property="qrImageView" destination="UC0-Tz-1Ib" id="4WN-IH-4is"/>
                         <outlet property="staLogoImageView" destination="O45-wa-gLp" id="c6m-nW-aX4"/>
@@ -4574,7 +4629,7 @@
                             <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </view>
                         <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" id="JYZ-ZA-zr4">
-                            <rect key="frame" x="0.0" y="140" width="375" height="64"/>
+                            <rect key="frame" x="0.0" y="140" width="375" height="79"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4972,6 +5027,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sxg-TV-Fxo"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mIS-IK-nX3"/>
                     <size key="freeformSize" width="375" height="1400"/>
                     <connections>
                         <outlet property="addAnncButton" destination="XV2-qD-gwc" id="Vzf-Ym-jLc"/>

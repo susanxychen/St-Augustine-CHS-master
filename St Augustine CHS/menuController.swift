@@ -31,6 +31,8 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
     //All Basic Menu Variables
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var menuScrollView: UIScrollView!
+    @IBOutlet weak var buttonsView: UIView!
     @IBOutlet var homeView: UIView!
     @IBOutlet weak var tapOutOfMenuButton: UIButton!
     @IBOutlet weak var dateToString: UILabel!
@@ -315,6 +317,7 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
         
         //Also update the image to the latest one the user has chosen
         profilePicture.image = allUserFirebaseData.profilePic
+        menuScrollView.contentSize = buttonsView.frame.size
     }
     
     func setupRemoteConfigDefaults() {
