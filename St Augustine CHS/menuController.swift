@@ -31,6 +31,8 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
     //All Basic Menu Variables
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var menuScrollView: UIScrollView!
+    @IBOutlet weak var buttonsView: UIView!
     @IBOutlet var homeView: UIView!
     @IBOutlet weak var tapOutOfMenuButton: UIButton!
     @IBOutlet weak var dateToString: UILabel!
@@ -41,6 +43,7 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
     
     //Scroll Height
     @IBOutlet weak var homeScrollViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var menuScrollViewHeight: NSLayoutConstraint!
     
     //Profile UI Variables
     @IBOutlet weak var profilePicture: UIImageView!
@@ -92,6 +95,9 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
     //***********************************SETTING UP EVERYTHING****************************************
     override func viewDidLoad() {
         super.viewDidLoad()
+        let bounds = UIScreen.main.bounds
+        let height = bounds.size.height
+        print("Screen height: \(height)")
         brightnessBeforeTT = UIScreen.main.brightness
         calendarButton.isHidden = true
         viewAboveAllViews.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
@@ -315,6 +321,11 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
         
         //Also update the image to the latest one the user has chosen
         profilePicture.image = allUserFirebaseData.profilePic
+        
+        //If the screen is too small to fit all menu buttons, just change the height to whatever it is
+        if UIScreen.main.bounds.height <= 568.0 {
+            menuScrollView.contentSize.height = buttonsView.frame.size.height + 61.0
+        }
     }
     
     func setupRemoteConfigDefaults() {

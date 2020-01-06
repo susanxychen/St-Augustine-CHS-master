@@ -21,7 +21,6 @@ class FAQController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
         tableViewData = [cellData(opened: false, title: "If I spend my spirit points, does it take away from the spirit points of my grade?", sectionData: ["No. Although the spirit points you gain individually are added to your grades overall spirit meter, these points will not be taken away once you decide to spend them."]),
                          cellData(opened: false, title: "How do I keep my school information private?", sectionData: ["To ensure other students cannot see your courses or clubs, go to the home screen and click the three dots on the top left corner, and then go into settings. From there, turn on the toggle switch to keep classes and clubs private."]),
                          cellData(opened: false, title: "How do you get more badges? Will each club have one?", sectionData: ["You can get more badges by joining different clubs, however, badges can only be earned once you have been accepted into the club by your club administrator. No, not all clubs have badges. It is up to the club administrator if they wish to add them."]),
