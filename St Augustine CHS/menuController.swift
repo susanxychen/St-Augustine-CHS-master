@@ -13,6 +13,7 @@ import WebKit
 import GoogleSignIn
 import SafariServices
 import UserNotifications
+import SwiftSoup
 
 //This is the struct that holds all of the users firebase data
 struct allUserFirebaseData {
@@ -54,6 +55,7 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
     //Online Data Variables
     //let dayURL = URL(string: "https://staugustinechs.netfirms.com/stadayonetwo/")
     let newsURL = URL(string: "http://staugustinechs.ca/printable/")
+    let prayerURL = URL(string: "https://www.biblegateway.com/")
     
     //Annoucment Variables
     var newsData = [[String]]()
@@ -64,6 +66,11 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var clubAnncView: UICollectionView!
     @IBOutlet weak var clubAnncHeight: NSLayoutConstraint!
     var clubNewsData = [[String:Any]]()
+    
+    //Daily Verse Variables
+    @IBOutlet weak var verse: UITextView!
+    @IBOutlet weak var citation: UITextView!
+    var dailyPrayerData: [String] = ["a", "a"]
     
     //Refresh Variables
     var refreshControl: UIRefreshControl?
@@ -95,9 +102,9 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
     //***********************************SETTING UP EVERYTHING****************************************
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bounds = UIScreen.main.bounds
+       /* let bounds = UIScreen.main.bounds
         let height = bounds.size.height
-        print("Screen height: \(height)")
+        print("Screen height: \(height)")*/
         brightnessBeforeTT = UIScreen.main.brightness
         calendarButton.isHidden = true
         viewAboveAllViews.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
@@ -236,6 +243,9 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
         
         //News Data
         newsTask()
+        
+        //Daily Prayer Data
+        scrapeDailyPrayer()
         
         homeScrollView.alwaysBounceVertical = true
         
@@ -832,6 +842,7 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
         
         getDayNumber()
         newsTask()
+        scrapeDailyPrayer()
         
         let user = Auth.auth().currentUser
         db.collection("users").document((user?.uid)!).getDocument { (docSnapshot, err) in
@@ -985,7 +996,7 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
         task2.resume()
     }
     
-    func processNewsSite(content: String) -> [[String]]{
+    func processNewsSite(content: String) -> [[String]] {
         //Content is the website code
         //GET STRING BETWEEN 'ancmnt = "' and '".split(",");' AND SPLIT THE DIFFERENT NEWS ITEMS (SEPARATED BY COMMAS)
         
@@ -999,7 +1010,7 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
         
         let range = (start! + 10)..<end!
         
-        var notFormattedCodedNews = String(content[range]).components(separatedBy: ",")
+        let notFormattedCodedNews = String(content[range]).components(separatedBy: ",")
         var finalNews = Array(repeating: Array(repeating: "", count: 2), count: notFormattedCodedNews.count)
         
         for item in 0..<notFormattedCodedNews.count {
@@ -1040,5 +1051,52 @@ class menuController: UIViewController, UICollectionViewDataSource, UICollection
             }
         }
         task.resume()
+    }
+    
+    func scrapeDailyPrayer() {
+        let task3 = URLSession.shared.dataTask(with: prayerURL!) { (data, response, error) in
+            if let error = error {
+                print("error in finding daily prayer")
+                self.newsData = [["No internet connection","Can't find daily prayer"]]
+                let alert = UIAlertController(title: "Error in retrieveing Daily Prayer", message: "Please Try Again later. Error: \(error.localizedDescription)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.annoucView.reloadData()
+                }
+            } else {
+                let htmlContent = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!
+                self.dailyPrayerData = self.parseDailyPrayer(html: htmlContent as String)
+                print("SUPERCALIFRAGILISTICEXPIALIDOCIOUS \(self.dailyPrayerData[0]) \(self.dailyPrayerData[1])")
+                DispatchQueue.main.async {
+                    self.verse.text = self.dailyPrayerData[0]
+                    self.citation.text = self.dailyPrayerData[1]
+                    self.annoucView.reloadData()
+                }
+            }
+        }
+        task3.resume()
+    }
+
+    func parseDailyPrayer(html: String) -> [String] {
+        var dailyPrayer: [String] = ["a", "a"]
+        do {
+            let doc: Document = try SwiftSoup.parse(html)
+            let p: Elements = try doc.select("p")
+            let a: Elements = try doc.select("a")
+            dailyPrayer[0] = try p[2].text()
+            dailyPrayer[1] = try "\(a[37].text()) \(a[38].text())"
+        } catch Exception.Error(type: let type, Message: let message) {
+            print(type)
+            print(message)
+            dailyPrayer[0] = "Error"
+            dailyPrayer[1] = "Error"
+        } catch {
+            print("Error");
+            dailyPrayer[0] = "Error"
+            dailyPrayer[1] = "Error"
+        }
+        return dailyPrayer
     }
 }
